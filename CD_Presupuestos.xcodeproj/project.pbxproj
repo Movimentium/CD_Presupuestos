@@ -13,6 +13,7 @@
 		0C2F1D512D938605001D0982 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C2F1D502D938605001D0982 /* Preview Assets.xcassets */; };
 		0C2F1D582D93865E001D0982 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0C2F1D572D93865E001D0982 /* README.md */; };
 		0C2F1D5A2D938706001D0982 /* CDProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F1D592D938706001D0982 /* CDProvider.swift */; };
+		0C2F1D5D2D938BE9001D0982 /* CDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F1D5B2D938BE9001D0982 /* CDModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		0C2F1D502D938605001D0982 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C2F1D572D93865E001D0982 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0C2F1D592D938706001D0982 /* CDProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProvider.swift; sourceTree = "<group>"; };
+		0C2F1D5C2D938BE9001D0982 /* CDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				0C2F1D492D938602001D0982 /* CD_PresupuestosApp.swift */,
 				0C2F1D4B2D938602001D0982 /* ContentView.swift */,
 				0C2F1D592D938706001D0982 /* CDProvider.swift */,
+				0C2F1D5B2D938BE9001D0982 /* CDModel.xcdatamodeld */,
 				0C2F1D4D2D938605001D0982 /* Assets.xcassets */,
 				0C2F1D4F2D938605001D0982 /* Preview Content */,
 			);
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C2F1D5D2D938BE9001D0982 /* CDModel.xcdatamodeld in Sources */,
 				0C2F1D5A2D938706001D0982 /* CDProvider.swift in Sources */,
 				0C2F1D4C2D938602001D0982 /* ContentView.swift in Sources */,
 				0C2F1D4A2D938602001D0982 /* CD_PresupuestosApp.swift in Sources */,
@@ -352,6 +356,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0C2F1D5B2D938BE9001D0982 /* CDModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0C2F1D5C2D938BE9001D0982 /* CDModel.xcdatamodel */,
+			);
+			currentVersion = 0C2F1D5C2D938BE9001D0982 /* CDModel.xcdatamodel */;
+			path = CDModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0C2F1D3E2D938602001D0982 /* Project object */;
 }
