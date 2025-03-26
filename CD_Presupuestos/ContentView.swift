@@ -1,10 +1,6 @@
-//
 //  ContentView.swift
 //  CD_Presupuestos
-//
 //  Created by Miguel Gallego on 26/3/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {

@@ -1,0 +1,79 @@
+
+# SO
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.lock
+*.tmp
+*.bak
+
+# Xcode
+DerivedData/
+.idea/
+*.xcworkspace
+!default.xcworkspace
+xcuserdata/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcassets
+
+# Build
+build/
+Build/
+*.ipa
+*.app
+*.dSYM
+
+# Swift Package Manager
+Packages/
+.build/
+.swiftpm/
+
+# Swift Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# CocoaPods
+Pods/
+Podfile.lock
+podfile.lock
+*.xcscmblueprint
+
+# Carthage
+Carthage/Build
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Code Coverage
+*.xccovreport
+*.xccovarchive
+
+# Temporary files
+*.moved-aside
+*.xcuserstate
+
+# Archives
+*.xcarchive
+
+# Package manager dependencies
+*.resolved
+
+# Log files
+*.log
+
+# SwiftUI Previews
+.swiftpm/xcode/outputs/
+
+# Dependency manager files
+Mintfile
+
+# SwiftLint and SwiftFormat configuration
+.swiftlint.yml
+.swiftformat
