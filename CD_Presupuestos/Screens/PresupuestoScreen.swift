@@ -10,7 +10,7 @@ struct PresupuestoScreen: View {
     var body: some View {
         VStack {
             List(presupuestos) { p in
-                Text(p.title ?? "")
+                PresupuestoCellView(p: p)
             }
         }
         .navigationTitle("App Presupuestos")

@@ -21,4 +21,14 @@ extension CDProvider {
 
         return provider
     }()
+    
+    static let presupuestoTest: CDPresupuesto = {
+        let moc = CDProvider.previewInstance.moc
+        let p = CDPresupuesto(context: moc)
+        p.title = "Vacaciones"
+        p.cantidad = 3000
+        p.fecha = Date.now
+        return p
+    }()
+
 }
