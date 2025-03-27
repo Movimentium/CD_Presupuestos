@@ -4,11 +4,14 @@
 import SwiftUI
 
 struct PresupuestoScreen: View {
+    @FetchRequest(sortDescriptors: []) private var presupuestos: FetchedResults<CDPresupuesto>
     @State private var isShowing = false
     
     var body: some View {
         VStack {
-            Text("Aquí se mostrarán los presupuestos")
+            List(presupuestos) { p in
+                Text(p.title ?? "")
+            }
         }
         .navigationTitle("App Presupuestos")
         .toolbar {
@@ -28,4 +31,5 @@ struct PresupuestoScreen: View {
     NavigationStack {
         PresupuestoScreen()
     }
+    .environment(\.managedObjectContext, CDProvider.previewInstance.moc)
 }
