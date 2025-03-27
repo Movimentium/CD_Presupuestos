@@ -18,6 +18,7 @@
 		0CDC8C6E2D94D022009F7E49 /* AddPresupuestoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C6D2D94D022009F7E49 /* AddPresupuestoScreen.swift */; };
 		0CDC8C702D94D148009F7E49 /* String_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C6F2D94D147009F7E49 /* String_Extension.swift */; };
 		0CDC8C732D94D8C6009F7E49 /* CDProvider_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C722D94D8C6009F7E49 /* CDProvider_Extension.swift */; };
+		0CDC8C752D94E09A009F7E49 /* CDPresupuesto_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C742D94E09A009F7E49 /* CDPresupuesto_Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		0CDC8C6D2D94D022009F7E49 /* AddPresupuestoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresupuestoScreen.swift; sourceTree = "<group>"; };
 		0CDC8C6F2D94D147009F7E49 /* String_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Extension.swift; sourceTree = "<group>"; };
 		0CDC8C722D94D8C6009F7E49 /* CDProvider_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProvider_Extension.swift; sourceTree = "<group>"; };
+		0CDC8C742D94E09A009F7E49 /* CDPresupuesto_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPresupuesto_Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				0CDC8C6F2D94D147009F7E49 /* String_Extension.swift */,
+				0CDC8C742D94E09A009F7E49 /* CDPresupuesto_Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				0C2F1D5F2D938D7B001D0982 /* PresupuestoScreen.swift in Sources */,
 				0C2F1D5D2D938BE9001D0982 /* CDModel.xcdatamodeld in Sources */,
 				0C2F1D5A2D938706001D0982 /* CDProvider.swift in Sources */,
+				0CDC8C752D94E09A009F7E49 /* CDPresupuesto_Extension.swift in Sources */,
 				0CDC8C732D94D8C6009F7E49 /* CDProvider_Extension.swift in Sources */,
 				0CDC8C6E2D94D022009F7E49 /* AddPresupuestoScreen.swift in Sources */,
 				0CDC8C702D94D148009F7E49 /* String_Extension.swift in Sources */,

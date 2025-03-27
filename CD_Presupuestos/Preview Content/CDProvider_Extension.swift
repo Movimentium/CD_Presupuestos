@@ -8,7 +8,7 @@ extension CDProvider {
         let provider = CDProvider(isForPreview: true)
         
         let entretenimiento = CDPresupuesto(context: provider.moc)
-        entretenimiento.title = "entretenimiento"
+        entretenimiento.title = "Entretenimiento"
         entretenimiento.cantidad = 500
         entretenimiento.fecha = Date.now
         
