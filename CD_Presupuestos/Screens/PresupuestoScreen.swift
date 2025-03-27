@@ -18,8 +18,8 @@ struct PresupuestoScreen: View {
                 }
             }
         }
-        .sheet(isPresented: $isShowing) {
-            Text("AddPresupuestoScreen")
+        .sheet(isPresented: $isShowing) {  
+            AddPresupuestoScreen()
         }
     }
 }

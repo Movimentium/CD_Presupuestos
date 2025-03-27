@@ -9,7 +9,9 @@ struct CD_PresupuestosApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                PresupuestoScreen()
+            }
                 .environment(\.managedObjectContext, provider.moc)
         }
     }
