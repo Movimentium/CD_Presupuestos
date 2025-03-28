@@ -12,6 +12,12 @@ extension CDProvider {
         entretenimiento.cantidad = 500
         entretenimiento.fecha = Date.now
         
+        let comida = CDPresupuesto(context: provider.moc)
+        comida.title = "Comida"
+        comida.cantidad = 200
+        comida.fecha = Date.now
+        
+        
         do {
             try provider.moc.save()
         } catch {

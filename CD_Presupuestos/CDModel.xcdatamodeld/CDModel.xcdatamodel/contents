@@ -2,8 +2,8 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="22H221" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="CDGasto" representedClassName="CDGasto" syncable="YES" codeGenerationType="class">
         <attribute name="cantidad" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="concepto" attributeType="String"/>
         <attribute name="fecha" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="title" attributeType="String"/>
         <relationship name="presupuesto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPresupuesto" inverseName="gastos" inverseEntity="CDPresupuesto"/>
     </entity>
     <entity name="CDPresupuesto" representedClassName="CDPresupuesto" syncable="YES" codeGenerationType="class">

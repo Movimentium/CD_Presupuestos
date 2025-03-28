@@ -10,7 +10,11 @@ struct PresupuestoScreen: View {
     var body: some View {
         VStack {
             List(presupuestos) { p in
-                PresupuestoCellView(p: p)
+                NavigationLink {
+                    PresupuestoDetailScreen(presupuesto: p)
+                } label: {
+                    PresupuestoCellView(p: p)
+                }
             }
         }
         .navigationTitle("App Presupuestos")
