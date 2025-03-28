@@ -12,7 +12,7 @@ struct CD_PresupuestosApp: App {
             NavigationStack {
                 PresupuestoScreen()
             }
-                .environment(\.managedObjectContext, provider.moc)
+            .environment(\.managedObjectContext, provider.moc)
         }
     }
 }
