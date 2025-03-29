@@ -5,13 +5,12 @@ import SwiftUI
 
 struct PresupuestoCellView: View {
     let p: CDPresupuesto
-    private let currencyCode = Locale.current.currency?.identifier ?? ""
 
     var body: some View {
         HStack {
             Text(p.title ?? "")
             Spacer()
-            Text(p.cantidad, format: .currency(code: currencyCode))
+            Text(p.cantidad, format: .currency(code: .currencyCode))
         }
     }
 }

@@ -7,4 +7,8 @@ extension String {
     var isEmptyOrWhiteSpace: Bool {
         return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
+    
+    static var currencyCode: String {
+        Locale.current.currency?.identifier ?? ""
+    }
 }

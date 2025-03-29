@@ -17,6 +17,11 @@ extension CDProvider {
         comida.cantidad = 200
         comida.fecha = Date.now
         
+        let leche = CDGasto(context: provider.moc)
+        leche.concepto = "Leche"
+        leche.cantidad = 5.45
+        leche.fecha = Date.now
+        comida.addToGastos(leche)
         
         do {
             try provider.moc.save()
@@ -27,6 +32,17 @@ extension CDProvider {
 
         return provider
     }()
+
+    static var presupuestoTestComida: CDPresupuesto {
+        let fr = CDPresupuesto.fetchRequest()
+        fr.predicate = NSPredicate(format: "title == %@", "Comida")
+        let moc = CDProvider.previewInstance.moc
+        if let results = try? moc.fetch(fr), let firstResult = results.first {
+            return firstResult
+        } else {
+            return Self.presupuestoTest // Vacaciones
+        }
+    }
     
     static let presupuestoTest: CDPresupuesto = {
         let moc = CDProvider.previewInstance.moc
@@ -36,5 +52,4 @@ extension CDProvider {
         p.fecha = Date.now
         return p
     }()
-
 }

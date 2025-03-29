@@ -5,9 +5,17 @@ import SwiftUI
 
 struct PresupuestoDetailScreen: View {
     @Environment(\.managedObjectContext) private var moc
+    @FetchRequest(sortDescriptors: []) private var gastos: FetchedResults<CDGasto>
+
     let presupuesto: CDPresupuesto
     @State private var concepto = ""
     @State private var cantidad: Double?
+    
+    init(presupuesto: CDPresupuesto) {
+        self.presupuesto = presupuesto
+        let predicate = NSPredicate(format: "presupuesto == %@", presupuesto)
+        _gastos = FetchRequest(sortDescriptors: [], predicate: predicate)
+    }
     
     var body: some View {
         Form {
@@ -23,7 +31,20 @@ struct PresupuestoDetailScreen: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(!isFormValid)
-                
+            }
+            
+            Section("Gastos") {
+                List(gastos) { gasto in
+                    HStack {
+                        Text(gasto.concepto ?? "")
+                        Spacer()
+                        Text(gasto.cantidad, format: .currency(code: .currencyCode))
+                    }
+                }
+                // REVISAR: otro enfoque
+//                List(presupuesto.gastos?.allObjects as? [CDGasto] ?? [] ) { gasto in
+//                    Text(gasto.concepto ?? "")
+//                }
             }
         }
         .navigationTitle(presupuesto.title ?? "")
@@ -55,7 +76,7 @@ struct PresupuestoDetailScreen: View {
 
 #Preview {
     NavigationStack {
-        PresupuestoDetailScreen(presupuesto: CDProvider.presupuestoTest)
+        PresupuestoDetailScreen(presupuesto: CDProvider.presupuestoTestComida)
             .environment(\.managedObjectContext, CDProvider.previewInstance.moc)
     }
 }
