@@ -6,25 +6,40 @@ import Foundation
 extension CDProvider {
     static let previewInstance: CDProvider = {
         let provider = CDProvider(isForPreview: true)
+        let moc = provider.moc
         
-        let entretenimiento = CDPresupuesto(context: provider.moc)
+        // Presupuestos
+        let entretenimiento = CDPresupuesto(context: moc)
         entretenimiento.title = "Entretenimiento"
         entretenimiento.cantidad = 500
         entretenimiento.fecha = Date.now
         
-        let comida = CDPresupuesto(context: provider.moc)
+        let comida = CDPresupuesto(context: moc)
         comida.title = "Comida"
         comida.cantidad = 200
         comida.fecha = Date.now
         
-        let leche = CDGasto(context: provider.moc)
+        // Gastos
+        let leche = CDGasto(context: moc)
         leche.concepto = "Leche"
         leche.cantidad = 5.45
         leche.fecha = Date.now
         comida.addToGastos(leche)
         
+        let panMolde = CDGasto(context: moc)
+        panMolde.concepto = "Pan de molde"
+        panMolde.cantidad = 4.50
+        panMolde.fecha = Date.now
+        comida.addToGastos(panMolde)
+        
+        let cine = CDGasto(context: moc)
+        cine.concepto = "Cine: Batman"
+        cine.cantidad = 7.95
+        cine.fecha = Date.now
+        entretenimiento.addToGastos(cine)
+        
         do {
-            try provider.moc.save()
+            try moc.save()
         } catch {
             print(#function, error)
         }
