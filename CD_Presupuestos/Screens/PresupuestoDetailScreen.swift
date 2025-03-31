@@ -34,11 +34,23 @@ struct PresupuestoDetailScreen: View {
             }
             
             Section("Gastos") {
-                List(gastos) { gasto in
-                    HStack {
-                        Text(gasto.concepto ?? "")
-                        Spacer()
-                        Text(gasto.cantidad, format: .currency(code: .currencyCode))
+                List {
+                    VStack() {
+                        HStack() {
+                            Spacer()
+                            Text("Total gastado")
+                            Text(total, format: .currency(code: .currencyCode))
+                        }
+                        HStack() {
+                            Spacer()
+                            Text("Restante")
+                            Text(restante, format: .currency(code: .currencyCode))
+                                .foregroundStyle(restante < 0 ? .red : .green)
+                        }
+                    }
+                    
+                    ForEach(gastos) { gasto in
+                        GastoCellView(gasto: gasto)
                     }
                 }
                 // REVISAR: otro enfoque
@@ -69,6 +81,16 @@ struct PresupuestoDetailScreen: View {
             print(error)
         }
     }
+    
+    private var total: Double {
+        return gastos.reduce(0) { total, gasto in
+            total + gasto.cantidad
+        }
+    }
+    
+    private var restante: Double {
+        presupuesto.cantidad - total
+    }
 }
 
 
@@ -80,3 +102,4 @@ struct PresupuestoDetailScreen: View {
             .environment(\.managedObjectContext, CDProvider.previewInstance.moc)
     }
 }
+

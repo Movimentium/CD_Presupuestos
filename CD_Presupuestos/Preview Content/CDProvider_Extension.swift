@@ -49,9 +49,9 @@ extension CDProvider {
     }()
 
     static var presupuestoTestComida: CDPresupuesto {
+        let moc = CDProvider.previewInstance.moc
         let fr = CDPresupuesto.fetchRequest()
         fr.predicate = NSPredicate(format: "title == %@", "Comida")
-        let moc = CDProvider.previewInstance.moc
         if let results = try? moc.fetch(fr), let firstResult = results.first {
             return firstResult
         } else {
@@ -67,4 +67,16 @@ extension CDProvider {
         p.fecha = Date.now
         return p
     }()
+    
+    static var gastoTestLeche: CDGasto {
+        let moc = CDProvider.previewInstance.moc
+        let fr = CDGasto.fetchRequest()
+        fr.predicate = NSPredicate(format: "concepto == %@", "Leche")
+        if let results = try? moc.fetch(fr), let firstResult = results.first {
+            return firstResult
+        } else {
+            fatalError("\(Self.self) \(#function) error")
+        }
+    }
+
 }
