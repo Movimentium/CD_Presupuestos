@@ -12,6 +12,17 @@ struct CD_PresupuestosApp: App {
             NavigationStack {
                 PresupuestoScreen()
             }
+            .onAppear {
+                @AppStorage("areTagsAdded") var areTagsAdded = false
+                if !areTagsAdded {
+                    do {
+                        try TagSeeder(moc: provider.moc).seed()
+                        areTagsAdded = true
+                    } catch {
+                        print(Self.self, #function, error)
+                    }
+                }
+            }
             .environment(\.managedObjectContext, provider.moc)
         }
     }

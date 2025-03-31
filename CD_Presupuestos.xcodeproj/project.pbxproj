@@ -15,6 +15,7 @@
 		0C2F1D5D2D938BE9001D0982 /* CDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F1D5B2D938BE9001D0982 /* CDModel.xcdatamodeld */; };
 		0C2F1D5F2D938D7B001D0982 /* PresupuestoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F1D5E2D938D7B001D0982 /* PresupuestoScreen.swift */; };
 		0CC2A2962D9A1A7600F7F100 /* GastoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2A2952D9A1A7600F7F100 /* GastoCellView.swift */; };
+		0CC2A2982D9A255800F7F100 /* TagSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2A2972D9A255800F7F100 /* TagSeeder.swift */; };
 		0CDC8C6E2D94D022009F7E49 /* AddPresupuestoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C6D2D94D022009F7E49 /* AddPresupuestoScreen.swift */; };
 		0CDC8C702D94D148009F7E49 /* String_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C6F2D94D147009F7E49 /* String_Extension.swift */; };
 		0CDC8C732D94D8C6009F7E49 /* CDProvider_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C722D94D8C6009F7E49 /* CDProvider_Extension.swift */; };
@@ -33,6 +34,7 @@
 		0C2F1D5C2D938BE9001D0982 /* CDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDModel.xcdatamodel; sourceTree = "<group>"; };
 		0C2F1D5E2D938D7B001D0982 /* PresupuestoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresupuestoScreen.swift; sourceTree = "<group>"; };
 		0CC2A2952D9A1A7600F7F100 /* GastoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastoCellView.swift; sourceTree = "<group>"; };
+		0CC2A2972D9A255800F7F100 /* TagSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSeeder.swift; sourceTree = "<group>"; };
 		0CDC8C6D2D94D022009F7E49 /* AddPresupuestoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresupuestoScreen.swift; sourceTree = "<group>"; };
 		0CDC8C6F2D94D147009F7E49 /* String_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Extension.swift; sourceTree = "<group>"; };
 		0CDC8C722D94D8C6009F7E49 /* CDProvider_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProvider_Extension.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				0C2F1D602D938D84001D0982 /* Screens */,
 				0CDC8C782D94EF3B009F7E49 /* Views */,
 				0C2F1D592D938706001D0982 /* CDProvider.swift */,
+				0CC2A2972D9A255800F7F100 /* TagSeeder.swift */,
 				0C2F1D5B2D938BE9001D0982 /* CDModel.xcdatamodeld */,
 				0CDC8C712D94D199009F7E49 /* Extensions */,
 				0C2F1D4D2D938605001D0982 /* Assets.xcassets */,
@@ -194,6 +197,7 @@
 			files = (
 				0CF3B7502D97606500E38D5E /* PresupuestoDetailScreen.swift in Sources */,
 				0C2F1D5F2D938D7B001D0982 /* PresupuestoScreen.swift in Sources */,
+				0CC2A2982D9A255800F7F100 /* TagSeeder.swift in Sources */,
 				0C2F1D5D2D938BE9001D0982 /* CDModel.xcdatamodeld in Sources */,
 				0C2F1D5A2D938706001D0982 /* CDProvider.swift in Sources */,
 				0CC2A2962D9A1A7600F7F100 /* GastoCellView.swift in Sources */,
