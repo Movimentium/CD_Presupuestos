@@ -16,6 +16,7 @@
 		0C2F1D5F2D938D7B001D0982 /* PresupuestoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2F1D5E2D938D7B001D0982 /* PresupuestoScreen.swift */; };
 		0CC2A2962D9A1A7600F7F100 /* GastoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2A2952D9A1A7600F7F100 /* GastoCellView.swift */; };
 		0CC2A2982D9A255800F7F100 /* TagSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2A2972D9A255800F7F100 /* TagSeeder.swift */; };
+		0CC2A29A2D9A2A8300F7F100 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC2A2992D9A2A8300F7F100 /* TagsView.swift */; };
 		0CDC8C6E2D94D022009F7E49 /* AddPresupuestoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C6D2D94D022009F7E49 /* AddPresupuestoScreen.swift */; };
 		0CDC8C702D94D148009F7E49 /* String_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C6F2D94D147009F7E49 /* String_Extension.swift */; };
 		0CDC8C732D94D8C6009F7E49 /* CDProvider_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C722D94D8C6009F7E49 /* CDProvider_Extension.swift */; };
@@ -35,6 +36,7 @@
 		0C2F1D5E2D938D7B001D0982 /* PresupuestoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresupuestoScreen.swift; sourceTree = "<group>"; };
 		0CC2A2952D9A1A7600F7F100 /* GastoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastoCellView.swift; sourceTree = "<group>"; };
 		0CC2A2972D9A255800F7F100 /* TagSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSeeder.swift; sourceTree = "<group>"; };
+		0CC2A2992D9A2A8300F7F100 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		0CDC8C6D2D94D022009F7E49 /* AddPresupuestoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPresupuestoScreen.swift; sourceTree = "<group>"; };
 		0CDC8C6F2D94D147009F7E49 /* String_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Extension.swift; sourceTree = "<group>"; };
 		0CDC8C722D94D8C6009F7E49 /* CDProvider_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProvider_Extension.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				0CDC8C762D94EE60009F7E49 /* PresupuestoCellView.swift */,
 				0CC2A2952D9A1A7600F7F100 /* GastoCellView.swift */,
+				0CC2A2992D9A2A8300F7F100 /* TagsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				0CDC8C6E2D94D022009F7E49 /* AddPresupuestoScreen.swift in Sources */,
 				0CDC8C702D94D148009F7E49 /* String_Extension.swift in Sources */,
 				0C2F1D4A2D938602001D0982 /* CD_PresupuestosApp.swift in Sources */,
+				0CC2A29A2D9A2A8300F7F100 /* TagsView.swift in Sources */,
 				0CDC8C772D94EE60009F7E49 /* PresupuestoCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

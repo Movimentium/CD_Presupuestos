@@ -39,6 +39,7 @@ extension CDProvider {
         entretenimiento.addToGastos(cine)
         
         do {
+            try TagSeeder(moc: moc).seed()
             try moc.save()
         } catch {
             print(#function, error)
