@@ -5,11 +5,16 @@
         <attribute name="concepto" attributeType="String"/>
         <attribute name="fecha" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="presupuesto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDPresupuesto" inverseName="gastos" inverseEntity="CDPresupuesto"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDTag" inverseName="gastos" inverseEntity="CDTag"/>
     </entity>
     <entity name="CDPresupuesto" representedClassName="CDPresupuesto" syncable="YES" codeGenerationType="class">
         <attribute name="cantidad" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="fecha" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" attributeType="String"/>
         <relationship name="gastos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDGasto" inverseName="presupuesto" inverseEntity="CDGasto"/>
+    </entity>
+    <entity name="CDTag" representedClassName="CDTag" syncable="YES" codeGenerationType="class">
+        <attribute name="nombre" attributeType="String"/>
+        <relationship name="gastos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDGasto" inverseName="tags" inverseEntity="CDGasto"/>
     </entity>
 </model>
