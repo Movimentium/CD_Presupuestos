@@ -18,6 +18,11 @@ struct PresupuestoDetailScreen: View {
     }
     
     var body: some View {
+        VStack {
+            Text(presupuesto.cantidad, format: .currency(code: .currencyCode)).font(.title2)
+                .frame(maxWidth: .infinity, alignment: .leading).padding(.horizontal)
+        }
+        
         Form {
             Section("Nuevo Gasto") {
                 TextField("Concepto", text: $concepto)
@@ -52,6 +57,7 @@ struct PresupuestoDetailScreen: View {
                     ForEach(gastos) { gasto in
                         GastoCellView(gasto: gasto)
                     }
+                    .onDelete(perform: deleteGasto)
                 }
                 // REVISAR: otro enfoque
 //                List(presupuesto.gastos?.allObjects as? [CDGasto] ?? [] ) { gasto in
@@ -77,6 +83,18 @@ struct PresupuestoDetailScreen: View {
             try moc.save()
             concepto = ""
             cantidad = nil
+        } catch {
+            print(error)
+        }
+    }
+    
+    private func deleteGasto(_ indexSet: IndexSet) {
+        indexSet.forEach { idx in
+            let gasto = gastos[idx]
+            moc.delete(gasto)
+        }
+        do {
+            try moc.save()
         } catch {
             print(error)
         }
