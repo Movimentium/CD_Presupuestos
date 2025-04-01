@@ -10,6 +10,7 @@ struct PresupuestoDetailScreen: View {
     let presupuesto: CDPresupuesto
     @State private var concepto = ""
     @State private var cantidad: Double?
+    @State private var tags: Set<CDTag> = []
     
     init(presupuesto: CDPresupuesto) {
         self.presupuesto = presupuesto
@@ -28,6 +29,7 @@ struct PresupuestoDetailScreen: View {
                 TextField("Concepto", text: $concepto)
                 TextField("Cantidad", value: $cantidad, format: .number)
                     .keyboardType(.numberPad)
+                TagsView(selectedTags: $tags)
                 Button {
                     addNewGasto()
                 } label: {
@@ -69,13 +71,14 @@ struct PresupuestoDetailScreen: View {
     }
     
     private var isFormValid: Bool {
-        !concepto.isEmptyOrWhiteSpace && Double(cantidad ?? 0) > 0
+        !concepto.isEmptyOrWhiteSpace && Double(cantidad ?? 0) > 0 && !tags.isEmpty
     }
     
     private func addNewGasto() {
         let gasto = CDGasto(context: moc)
         gasto.concepto = concepto
         gasto.cantidad = cantidad ?? 0
+        gasto.tags = NSSet(set: tags)
         gasto.fecha = Date.now
         presupuesto.addToGastos(gasto)
         
