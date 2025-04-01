@@ -39,7 +39,15 @@ extension CDProvider {
         entretenimiento.addToGastos(cine)
         
         do {
+            // Añadir todos los tags a la DB
             try TagSeeder(moc: moc).seed()
+            // Añadir los tags "Comida" y "Compras" a "leche"
+            let fr = CDTag.fetchRequest()
+            let p = NSPredicate(format: "nombre IN %@", ["Comida", "Compras"])
+            fr.predicate = p
+            let tags = try moc.fetch(fr)
+            tags.forEach { leche.addToTags($0) }
+            
             try moc.save()
         } catch {
             print(#function, error)

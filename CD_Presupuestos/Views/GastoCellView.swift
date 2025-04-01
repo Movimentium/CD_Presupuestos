@@ -7,10 +7,24 @@ struct GastoCellView: View {
     let gasto: CDGasto
 
     var body: some View {
-        HStack {
-            Text(gasto.concepto ?? "")
-            Spacer()
-            Text(gasto.cantidad, format: .currency(code: .currencyCode))
+        VStack {
+            HStack {
+                Text(gasto.concepto ?? "")
+                Spacer()
+                Text(gasto.cantidad, format: .currency(code: .currencyCode))
+            }
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(Array(gasto.tags as? Set<CDTag> ?? [])) { tag in
+                        Text(tag.nombre ?? "")
+                            .font(.caption)
+                            .padding(6)
+                            .foregroundStyle(.white)
+                            .background(.blue)
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                    }
+                }
+            }
         }
     }
 }
