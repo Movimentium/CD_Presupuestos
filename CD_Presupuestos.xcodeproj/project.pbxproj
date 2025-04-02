@@ -22,6 +22,7 @@
 		0CDC8C732D94D8C6009F7E49 /* CDProvider_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C722D94D8C6009F7E49 /* CDProvider_Extension.swift */; };
 		0CDC8C752D94E09A009F7E49 /* CDPresupuesto_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C742D94E09A009F7E49 /* CDPresupuesto_Extension.swift */; };
 		0CDC8C772D94EE60009F7E49 /* PresupuestoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C762D94EE60009F7E49 /* PresupuestoCellView.swift */; };
+		0CE4FC7A2D9CD8C600A7D024 /* FilterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE4FC792D9CD8C600A7D024 /* FilterScreen.swift */; };
 		0CF3B7502D97606500E38D5E /* PresupuestoDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF3B74F2D97606500E38D5E /* PresupuestoDetailScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		0CDC8C722D94D8C6009F7E49 /* CDProvider_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProvider_Extension.swift; sourceTree = "<group>"; };
 		0CDC8C742D94E09A009F7E49 /* CDPresupuesto_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDPresupuesto_Extension.swift; sourceTree = "<group>"; };
 		0CDC8C762D94EE60009F7E49 /* PresupuestoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresupuestoCellView.swift; sourceTree = "<group>"; };
+		0CE4FC792D9CD8C600A7D024 /* FilterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterScreen.swift; sourceTree = "<group>"; };
 		0CF3B74F2D97606500E38D5E /* PresupuestoDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresupuestoDetailScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				0C2F1D5E2D938D7B001D0982 /* PresupuestoScreen.swift */,
 				0CDC8C6D2D94D022009F7E49 /* AddPresupuestoScreen.swift */,
 				0CF3B74F2D97606500E38D5E /* PresupuestoDetailScreen.swift */,
+				0CE4FC792D9CD8C600A7D024 /* FilterScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				0CDC8C752D94E09A009F7E49 /* CDPresupuesto_Extension.swift in Sources */,
 				0CDC8C732D94D8C6009F7E49 /* CDProvider_Extension.swift in Sources */,
 				0CDC8C6E2D94D022009F7E49 /* AddPresupuestoScreen.swift in Sources */,
+				0CE4FC7A2D9CD8C600A7D024 /* FilterScreen.swift in Sources */,
 				0CDC8C702D94D148009F7E49 /* String_Extension.swift in Sources */,
 				0C2F1D4A2D938602001D0982 /* CD_PresupuestosApp.swift in Sources */,
 				0CC2A29A2D9A2A8300F7F100 /* TagsView.swift in Sources */,
