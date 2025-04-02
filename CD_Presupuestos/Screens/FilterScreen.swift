@@ -11,10 +11,12 @@ struct FilterScreen: View {
     @State private var tags: Set<CDTag> = []
     @State private var minPrice: Double?
     @State private var maxPrice: Double?
+    @State private var concepto = ""
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Section("Filtrar por Tags") {
+            Section("Filtrar por tags") {
                 TagsView(selectedTags: $tags)
                     .padding(.bottom)
                     .onChange(of: tags, filtrarPorTags)
@@ -25,6 +27,14 @@ struct FilterScreen: View {
                 TextField("Max", value: $maxPrice, format: .number)
                 Button("Filtrar") {
                     filtrarPorPrecio()
+                }
+                .padding(.bottom)
+            }
+            
+            Section("Filtrar por concepto") {
+                TextField("Concepto", text: $concepto)
+                Button("Filtrar") {
+                    filtrarPorConcepto()
                 }
             }
             
@@ -37,9 +47,9 @@ struct FilterScreen: View {
                 tags = []
                 gastosFiltrados = Array(gastos)
             }
+            .buttonStyle(.borderedProminent)
             .frame(maxWidth: .infinity)
         }
-        .buttonStyle(.borderedProminent)
         .padding()
         .navigationTitle("Filtrar Gastos")
     }
@@ -59,6 +69,12 @@ struct FilterScreen: View {
         let max = NSNumber(value: maxPrice)
         let fr = CDGasto.fetchRequest()
         fr.predicate = NSPredicate(format: "cantidad >= %@ AND cantidad <= %@", min, max)
+        filtrar(conFetchRequest: fr)
+    }
+    
+    private func filtrarPorConcepto() {
+        let fr = CDGasto.fetchRequest()
+        fr.predicate = NSPredicate(format: "concepto BEGINSWITH %@", concepto)
         filtrar(conFetchRequest: fr)
     }
     
