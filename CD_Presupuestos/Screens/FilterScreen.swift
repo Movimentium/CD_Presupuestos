@@ -5,9 +5,10 @@ import SwiftUI
 
 struct FilterScreen: View {
     @Environment(\.managedObjectContext) private var moc
-    @State private var tags: Set<CDTag> = []
+    @FetchRequest(sortDescriptors: []) private var gastos: FetchedResults<CDGasto>
     @State private var gastosFiltrados: [CDGasto] = []
-    
+    @State private var tags: Set<CDTag> = []
+
     var body: some View {
         VStack(alignment: .leading) {
             Section("Filtrar por Tags") {
@@ -18,19 +19,28 @@ struct FilterScreen: View {
                 GastoCellView(gasto: gasto)
             }
             Spacer()
+            
+            Button("Mostrar todos los gatos") {
+                tags = []
+                gastosFiltrados = Array(gastos)
+            }
+            .frame(maxWidth: .infinity)
+            .buttonStyle(.borderedProminent)
         }
         .padding()
-        .navigationTitle("Filtrar")
+        .navigationTitle("Filtrar Gastos")
     }
     
     private func filtrarTags() {
-        let tagsNombres = tags.map { $0.nombre }
-        let fr = CDGasto.fetchRequest()
-        fr.predicate = NSPredicate(format: "ANY tags.nombre IN %@", tagsNombres)
-        do {
-            gastosFiltrados = try moc.fetch(fr)
-        } catch {
-            print(error)
+        if !tags.isEmpty {
+            let tagsNombres = tags.map { $0.nombre }
+            let fr = CDGasto.fetchRequest()
+            fr.predicate = NSPredicate(format: "ANY tags.nombre IN %@", tagsNombres)
+            do {
+                gastosFiltrados = try moc.fetch(fr)
+            } catch {
+                print(error)
+            }
         }
     }
 }

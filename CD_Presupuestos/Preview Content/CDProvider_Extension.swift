@@ -38,6 +38,15 @@ extension CDProvider {
         cine.fecha = Date.now
         entretenimiento.addToGastos(cine)
         
+        let comidas = ["Galletas", "Yogures", "Pizza", "Pavo", "Huevos", "Madalenas", "Manzanas"]
+        for item in comidas {
+            let gasto = CDGasto(context: moc)
+            gasto.concepto = item
+            gasto.cantidad = Double.random(in: 8...100)
+            gasto.fecha = Date.now
+            gasto.presupuesto = comida
+        }
+        
         do {
             // Añadir todos los tags a la DB
             try TagSeeder(moc: moc).seed()
