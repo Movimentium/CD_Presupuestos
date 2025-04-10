@@ -12,13 +12,13 @@ struct FilterScreen: View {
     @State private var minPrice: Double?
     @State private var maxPrice: Double?
     @State private var concepto = ""
-    
+    @State private var fechaIni = Date.now
+    @State private var fechaFin = Date.now
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        List {
             Section("Filtrar por tags") {
                 TagsView(selectedTags: $tags)
-                    .padding(.bottom)
                     .onChange(of: tags, filtrarPorTags)
             }
             
@@ -28,7 +28,6 @@ struct FilterScreen: View {
                 Button("Filtrar") {
                     filtrarPorPrecio()
                 }
-                .padding(.bottom)
             }
             
             Section("Filtrar por concepto") {
@@ -38,10 +37,18 @@ struct FilterScreen: View {
                 }
             }
             
-            List(gastosFiltrados) { gasto in
+            Section("Filtrar por fecha") {
+                DatePicker("Fecha inicio", selection: $fechaIni, displayedComponents: .date)
+                DatePicker("Fecha fin", selection: $fechaFin, displayedComponents: .date)
+                Button("Filtrar") {
+                    filtrarPorFecha()
+                }
+            }
+            
+            
+            ForEach(gastosFiltrados) { gasto in
                 GastoCellView(gasto: gasto)
             }
-            Spacer()
             
             Button("Mostrar todos los gatos") {
                 tags = []
@@ -50,7 +57,6 @@ struct FilterScreen: View {
             .buttonStyle(.borderedProminent)
             .frame(maxWidth: .infinity)
         }
-        .padding()
         .navigationTitle("Filtrar Gastos")
     }
     
@@ -75,6 +81,14 @@ struct FilterScreen: View {
     private func filtrarPorConcepto() {
         let fr = CDGasto.fetchRequest()
         fr.predicate = NSPredicate(format: "concepto BEGINSWITH %@", concepto)
+        filtrar(conFetchRequest: fr)
+    }
+    
+    private func filtrarPorFecha() {
+        let fr = CDGasto.fetchRequest()
+        let fIni = fechaIni as NSDate
+        let fFin = fechaFin as NSDate
+        fr.predicate = NSPredicate(format: "fecha >= %@ AND fecha <= %@", fIni, fFin)
         filtrar(conFetchRequest: fr)
     }
     
