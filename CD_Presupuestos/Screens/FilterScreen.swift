@@ -14,9 +14,19 @@ struct FilterScreen: View {
     @State private var concepto = ""
     @State private var fechaIni = Date.now
     @State private var fechaFin = Date.now
+    @State private var sortOptionSelected: SortOption?
     
     var body: some View {
         List {
+            Section("Orden") {
+                Picker("Ordenar por", selection: $sortOptionSelected) {
+                    Text("Selecciona").tag(Optional<SortOption>(nil))// REVISAR: no me gusta
+                    ForEach(SortOption.allCases) { sortOption in
+                        Text(sortOption.rawValue).tag(Optional(sortOption))
+                    }
+                }
+            }
+            
             Section("Filtrar por tags") {
                 TagsView(selectedTags: $tags)
                     .onChange(of: tags, filtrarPorTags)
@@ -98,6 +108,18 @@ struct FilterScreen: View {
         } catch {
             print(error)
         }
+    }
+    
+    // REVISAR: esto no debería estar aquí
+    private enum SortOption: String, CaseIterable, Identifiable {
+        case concepto
+        case fecha
+        
+        var str: String {
+            self.rawValue.uppercased()
+        }
+        
+        var id: SortOption { self }
     }
 }
 
